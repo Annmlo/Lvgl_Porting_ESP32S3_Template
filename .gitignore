@@ -1,0 +1,27 @@
+# ============ ESP-IDF 构建产物 ============
+build/
+sdkconfig.old
+managed_components/
+
+# ============ 编辑器 / IDE ============
+# .vscode 里含本机绝对路径（IDF 路径、调试器路径），不适合提交
+.vscode/
+*.code-workspace
+.cache/
+compile_commands.json
+
+# ============ 系统垃圾 ============
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.log
+
+# ============ 说明 ============
+# 刻意【不】忽略的文件，请不要加进来：
+#   sdkconfig          —— 已调好的板级配置（avoid-tear mode 3 / RGB565 / PSRAM Octal），
+#                         提交它才能保证 clone 下来直接编译就能点亮屏
+#   sdkconfig.defaults —— 配置模板
+#   dependencies.lock  —— 与上游微雪例程保持一致，保证依赖可复现
+#   components/        —— 本地内置的 lvgl 8.4.0 / esp_lcd_touch / gt911 驱动
+#                         （type: local，无需联网拉取）
